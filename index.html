@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Paraíso - Lujo y Confort</title>
+<style>
+*{ margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif; }
+body{ background:#f5f5f5; color:#333; }
+header{ background:#111; color:white; padding:20px 10%; display:flex; justify-content:space-between; align-items:center; }
+header h1{ font-size:24px; }
+nav a{ color:white; margin-left:20px; text-decoration:none; font-weight:bold; }
+.hero{ height:90vh; background:url("https://images.unsplash.com/photo-1566073771259-6a8506099945") center/cover; display:flex; align-items:center; justify-content:center; text-align:center; color:white; }
+.hero h2{ font-size:48px; background:rgba(0,0,0,0.5); padding:20px; border-radius:10px; }
+section{ padding:60px 10%; }
+.titulo{ text-align:center; margin-bottom:40px; font-size:32px; }
+.sobre{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+.sobre img{ width:100%; border-radius:10px; }
+.galeria{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.galeria img{ width:100%; height:200px; object-fit:cover; border-radius:10px; transition:0.3s; }
+.galeria img:hover{ transform:scale(1.05); }
+.habitaciones{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.card{ background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); overflow:hidden; }
+.card img{ width:100%; height:200px; object-fit:cover; }
+.card h3{ padding:15px; }
+.card p{ padding:0 15px 15px; }
+.servicios{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; text-align:center; }
+.servicio{ background:white; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+.reserva{ background:#222; color:white; border-radius:10px; }
+form{ display:grid; gap:15px; max-width:500px; margin:auto; }
+input,select,textarea{ padding:12px; border:none; border-radius:5px; }
+button{ padding:15px; border:none; background:#f4b400; font-weight:bold; cursor:pointer; border-radius:5px; }
+button:hover{ background:#e0a200; }
+.contacto{ text-align:center; }
+footer{ background:#111; color:white; text-align:center; padding:20px; margin-top:40px; }
+@media(max-width:800px){ .sobre{ grid-template-columns:1fr; }
+.hero h2{ font-size:32px; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Hotel Paraíso</h1>
+<nav>
+<a href="#sobre">Hotel</a>
+<a href="#habitaciones">Habitaciones</a>
+<a href="#galeria">Galería</a>
+<a href="#servicios">Servicios</a>
+<a href="#reserva">Reservar</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+<div class="hero">
+<h2>Lujo, confort y descanso en un solo lugar</h2>
+</div>
+<section id="sobre">
+<h2 class="titulo">Sobre Nuestro Hotel</h2>
+<div class="sobre">
+<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+<p> El Hotel Paraíso es un espacio diseñado para ofrecer una experiencia única de descanso y lujo. Contamos con instalaciones modernas, atención personalizada y una ubicación privilegiada cerca de los principales atractivos turísticos. Nuestro objetivo es que cada huésped disfrute de comodidad, tranquilidad y una atención de primera clase. </p>
+</div>
+</section>
+<section id="habitaciones">
+<h2 class="titulo">Habitaciones</h2>
+<div class="habitaciones">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
+<h3>Habitación Estándar</h3>
+<p>Cómoda habitación ideal para viajeros.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+<h3>Habitación Deluxe</h3>
+<p>Mayor espacio y vista espectacular.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461">
+<h3>Suite Premium</h3>
+<p>La mejor experiencia de lujo y confort.</p>
+</div>
+</div>
+</section>
+<section id="galeria">
+<h2 class="titulo">Galería</h2>
+<div class="galeria">
+<img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210c4">
+<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+<img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+<img src="https://images.unsplash.com/photo-1521783988139-893ce8db4cbe">
+</div>
+</section>
+<section id="servicios">
+<h2 class="titulo">Servicios</h2>
+<div class="servicios">
+<div class="servicio">Piscina</div>
+<div class="servicio">WiFi Gratis</div>
+<div class="servicio">Restaurante</div>
+<div class="servicio">Spa</div>
+<div class="servicio">Gimnasio</div>
+<div class="servicio">Transporte</div>
+</div>
+</section>
+<section id="reserva" class="reserva">
+<h2 class="titulo">Reserva tu habitación</h2>
+<form>
+<input type="text" placeholder="Nombre completo" required>
+<input type="email" placeholder="Correo electrónico" required>
+<input type="date" required>
+<input type="date" required>
+<select>
+<option>Habitación Estándar</option>
+<option>Habitación Deluxe</option>
+<option>Suite Premium</option>
+</select>
+<button type="submit">Reservar ahora</button>
+</form>
+</section>
+<section id="contacto" class="contacto">
+<h2 class="titulo">Contacto</h2>
+<p>📍 Dirección: Avenida Central 123</p>
+<p>📞 Teléfono: +57 300 000 0000</p>
+<p>✉️ Email: reservas@hotelparaiso.com</p>
+</section>
+<footer>
+<p>© 2026 Hotel Paraíso - Todos los derechos reservados</p>
+</footer>
+</body>
+</html>
