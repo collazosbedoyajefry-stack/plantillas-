@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Time Zones</title>
+    <script>
+        function updateClocks() {
+            const timeZones = [
+                { name: "UTC", offset: 0 },
+                { name: "EST", offset: -5 },
+                { name: "CST", offset: -6 },
+                { name: "MST", offset: -7 },
+                { name: "PST", offset: -8 }
+            ];
+
+            const now = new Date();
+            const clockContainer = document.getElementById('clocks');
+            clockContainer.innerHTML = '';
+
+            timeZones.forEach(zone => {
+                const time = new Date(now.getTime() + zone.offset * 60 * 60 * 1000);
+                const timeString = time.toUTCString().split(' ')[4];
+                const clockDiv = document.createElement('div');
+                clockDiv.innerText = zone.name + ': ' + timeString;
+                clockContainer.appendChild(clockDiv);
+            });
+        }
+
+        setInterval(updateClocks, 1000);
+    </script>
+</head>
+<body>
+    <h1>Digital Clock - Multiple Time Zones</h1>
+    <div id="clocks"></div>
+</body>
+</html>
